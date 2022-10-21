@@ -20,18 +20,21 @@ var dataSet: [Int] = []
 
 //Populate the list
 
-//Best case scenario - already sorted
-dataSet.append(3)
-dataSet.append(6)
-dataSet.append(9)
-dataSet.append(19)
-dataSet.append(21)
-dataSet.append(23)
-dataSet.append(32)
-dataSet.append(45)
-dataSet.append(59)
-dataSet.append(60)
+//Worst case scenario - reverse order
+
 dataSet.append(66)
+dataSet.append(60)
+dataSet.append(59)
+dataSet.append(45)
+dataSet.append(32)
+dataSet.append(23)
+dataSet.append(21)
+dataSet.append(19)
+dataSet.append(9)
+dataSet.append(6)
+dataSet.append(3)
+
+
 
 //Print the list
 print("Unsorted:")
@@ -91,3 +94,9 @@ for i in 0..<dataSet.count {
 }
 
 
+// worst case: O(n^2-n)
+//roughly: O(n^2)
+//pronounced as "big Oh"
+
+// best case: omega(n-1)
+//roughly: omega(n)
