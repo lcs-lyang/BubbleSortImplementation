@@ -20,10 +20,18 @@ var dataSet: [Int] = []
 
 //Populate the list
 
-for _ in 1...10 {
-    dataSet.append(Int.random(in: 1...100))
-}
-
+//Best case scenario - already sorted
+dataSet.append(3)
+dataSet.append(6)
+dataSet.append(9)
+dataSet.append(19)
+dataSet.append(21)
+dataSet.append(23)
+dataSet.append(32)
+dataSet.append(45)
+dataSet.append(59)
+dataSet.append(60)
+dataSet.append(66)
 
 //Print the list
 print("Unsorted:")
@@ -33,6 +41,9 @@ waitForUserInput()
 //Loop through the entire array "n" times
 //(however many time there are elements in the array)
 for i in 0..<dataSet.count {
+    
+    //Keep track of whether a pair of numbers was swapped. Written here so that it can be looped.
+    var swapped = false
     
     //One pass through the array to float the highest number to the end
     
@@ -54,10 +65,21 @@ for i in 0..<dataSet.count {
             dataSet[j + 1] = temporaryValue //replace right with the temporary value
             
             print("values were swapped.", terminator: "")
+            
+            //Note that a swap occured
+            
+            swapped = true
         }
+        
+        print("")
     }
     
+    //When no swaps occured, stop the loop
 
+    if swapped == false {
+        break
+    }
+    
     print("")
 
     //Print the array after the pass
