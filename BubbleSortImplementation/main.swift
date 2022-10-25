@@ -17,6 +17,7 @@ func waitForUserInput() {
 // create an empty list (array)
 //telling swift that we want a lift of integers that starts empty
 var dataSet: [Int] = []
+//var time: [Double] = []
 
 //Populate the list
 
@@ -34,6 +35,8 @@ dataSet.append(9)
 dataSet.append(6)
 dataSet.append(3)
 
+//dataSet.append(.random(in: 1...10))
+
 
 
 //Print the list
@@ -43,6 +46,14 @@ waitForUserInput()
 
 //Loop through the entire array "n" times
 //(however many time there are elements in the array)
+
+//Keep track of the start time (epoch)
+//When this line of code runs, startTime contains the
+//number of seconds since Jan 1 1970
+
+let startTime = Date().timeIntervalSince1970
+print("Starting sort...", terminator: "")
+
 for i in 0..<dataSet.count {
     
     //Keep track of whether a pair of numbers was swapped. Written here so that it can be looped.
@@ -51,7 +62,7 @@ for i in 0..<dataSet.count {
     //One pass through the array to float the highest number to the end
     
     
-    for j in 0..<dataSet.count - 1 {
+    for j in 0..<dataSet.count - 1 - i {
         print(j)
         
         //Compare left valur to right value
@@ -92,6 +103,19 @@ for i in 0..<dataSet.count {
     waitForUserInput()
     
 }
+
+
+print("ended.")
+
+let endTime = Date().timeIntervalSince1970
+
+//get elapsed time
+let elapsedTime = endTime - startTime
+print("Sort took \(elapsedTime) seconds.")
+
+//Store the elapsed time into the empty list of "time"
+//Then prompt (create equation) to add all of them then divide by n
+
 
 
 // worst case: O(n^2-n)
